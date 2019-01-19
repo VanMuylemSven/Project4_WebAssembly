@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "serve": "^10.1.1"
+  }
+}
