@@ -24,5 +24,5 @@ strcpy(attr.requestMethod, "GET");
 attr.attributes = EMSCRIPTEN_FETCH_LOAD_TO_MEMORY | EMSCRIPTEN_FETCH_PERSIST_FILE;
 attr.onsuccess = downloadSucceeded;
 attr.onerror = downloadFailed;
-emscripten_fetch(&attr, "./json/bol_list2.json");
+emscripten_fetch(&attr, "./json/bol_list3.json");
 }

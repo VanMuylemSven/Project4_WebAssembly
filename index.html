@@ -3,20 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>JS Webstore example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
-    <script src="./js/main.js"></script>
+    <script defer src="./js/main.js"></script>
+    <script src="./wasm/fetch_cat_elek.js"></script>
 </head>
-<nav>
-    <a href="index.html">Js by file</a>
-    <a>Js by URL</a>
-    <a href="WasmByFile.html">wasm by file</a>
-    <a>wasm by URL</a>
-</nav>
 
 <body>
+    <nav>
+        <a class="selected_link" href="index.html">Javascript Storepage</a>
+        <a href="WasmByFile.html">Webassembly Storepage</a>
+        <a href="testFetches.html">Testing Fetches</a>
+        <a href="testSumInt.html">Testing Maths</a>
+    </nav>
+    <header>
+        <div class="header_row_1">
+            <input type="text" placeholder="Search.." id="input_filter">
+            <img src="./resources/img/searchIcon.png"  id="btn_filter_items">
+        </div>
+        <div class="header_row_2">
+            <div class="header_categories">
+                <a name="elek" class="selected_category category">> Elektronica</a>
+                <a name="muziek" class="category">Muziek</a>
+                <a name="speel" class="category">Speelgoed</a>
+                <a name="school" class="category">School</a>
+                <a name="wonen" class="category">Wonen</a>
+            </div>
+            <div class="header_client">
+                <p>Welkom, klant</p>
+                <img src="./resources/img/shoppingCart.png">
+            </div>
+        </div>
+    </header>
     <div class="item_container" id="item_container">
     </div>
 </body>

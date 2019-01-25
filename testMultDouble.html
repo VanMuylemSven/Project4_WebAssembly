@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Testing Maths</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    
+</head>
+<script src="./wasm/multiplyDouble.js"></script>
+<script>
+  // Instanties WASM Code into callable module form //
+  var module, functions = {};
+  fetch('./wasm/multiplyDouble.wasm')
+    .then(response => response.arrayBuffer())
+    .then(buffer => new Uint8Array(buffer))
+    .then(binary => {
+      var moduleArgs = {
+        wasmBinary: binary,
+        onRuntimeInitialized: function () {
+          functions.multiplyDouble =
+            module.cwrap('multiplyDouble',
+                        'number',
+                        ['number', 'number', 'number']);
+        }
+      };
+      module = Module(moduleArgs);
+    });
+</script>
+<script defer src="./js/testMultDouble.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Javascript Storepage</a>
+        <a href="WasmByFile.html">Webassembly Storepage</a>
+        <a href="testFetches.html">Testing Fetches</a>
+        <a class="selected_link" href="testSumInt.html">Testing Maths</a>
+  </nav>
+  <div class="sidebar">
+      <ul>
+        <li><a href="testSumInt.html">Sum</a></li>
+        <li><a class="selectedLink" href="testMultDouble.html">Multiply</a></li>
+        <li><a href="testFibonacci.html">Fibonacci</a></li>
+        <li><a href="testQuickSort.html">Quick sorting</a></li>
+      </ul>
+    </div>
+
+  <div class="test_container ">
+    <div class="test_item">
+    <p class="test_title">Sum : Array(100,000), 10,000 loops</p>
+
+    <table>
+        <tr>
+            <th><button id="btn_mult">run</button></th>
+            <th>Javascript</th>
+            <th>Webassembly</th>
+        </tr>
+        <tr>
+            <td>Time:</td>
+            <td id="js_mult"></td>
+            <td id="wasm_mult"></td>
+        </tr>
+    </table>
+  </div>
+</body>
+</html>

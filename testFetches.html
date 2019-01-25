@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Testing Fetches</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <script src="./wasm/fetch_bol3.js"></script>
+    <script defer src="./js/testingFetch.js"></script>
+    <script defer src="./wasm/fetch_bol_loop_mod.js"></script>
+    <script defer src="./wasm/fetch_url.js"></script>
+    <!-- <script defer src="./wasm/sum.js"></script> -->
+</head>
+<body>
+    <nav>
+            <a  href="index.html">Javascript Storepage</a>
+            <a href="WasmByFile.html">Webassembly Storepage</a>
+            <a class="selected_link" href="testFetches.html">Testing Fetches</a>
+            <a href="testSumInt.html">Testing Maths</a>
+    </nav>
+    <div class="test_container ">
+        <div class="test_item">
+            <p class="test_title">Fetching JSON from file x 100</p>
+            <table>
+                <tr>
+                    <th>       </th>
+                    <th>Javascript</th>
+                    <th>Webassembly</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="Run" id="btn_fetch_js"></td>
+                    <td><input type="button" value="Run" id="btn_fetch_wasm"></td>
+                </tr>
+                <tr>
+                    <td>Total time to fetch:</td>
+                    <td id="fetch_js_result"></td>
+                    <td id="fetch_wasm_result">> Console output <</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="test_item">
+            <p class="test_title">Fetching JSON from url x 100</p>
+            <table>
+                <tr>
+                    <th>       </th>
+                    <th>Javascript</th>
+                    <th>Webassembly</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="Run" id="btn_fetchurl_js" ></td>
+                    <td><input type="button" value="Run" id="btn_fetchurl_wasm"></td>
+                </tr>
+                <tr>
+                    <td>Total time to fetch:</td>
+                    <td id="fetchurl_js_result"></td>
+                    <td id="fetchurl_wasm_result">> Console output <</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="test_item">
+            <p class="test_title">Webassembly - converting IndexedDB arraybuffer to JSON</p>
+            <table>
+                <tr>
+                    <th>       </th>
+                    <th>IndexedDB</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="Run" id="btn_db_wasm"></td>
+                </tr>
+                <tr>
+                    <td>Getting from IDB:</td>
+                    <td id="db_get_result"></td>
+                </tr>
+                <tr>
+                    <td>Converting to JSON:</td>
+                    <td id="db_convert_result"></td>
+                </tr>
+                <tr>
+                    <td>Total time:</td>
+                    <td id="db_total_result"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
