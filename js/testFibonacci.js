@@ -11,9 +11,9 @@ function jsFib(n) {
 
 function start() {
     console.log("Executing Fibonaccci performance test: ");
-    console.log("- 10 loops to 40th number")    
+    console.log("- 1 loop to 40th number")    
     let num = 40;
-    let loop = 10;
+    let loop = 1;
     
     let jsPerformance = document.getElementById('js_result');
     let wsPerformance = document.getElementById('wasm_result');
@@ -27,7 +27,7 @@ function start() {
         func(n);
         }
         let endTime = performance.now();
-        return ((endTime - startTime) / loop).toFixed(4);
+        return ((endTime - startTime)).toFixed(2);
     }
     
     // don't use Promise for the non Promise support browsers so far.

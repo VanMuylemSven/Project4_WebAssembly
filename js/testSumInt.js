@@ -29,14 +29,17 @@ function start() {
     
     function run(func, array, loop) {
         let elapsedTime = 0.0;
+        let startTime = performance.now();
+        // console.log(startTime);
         for (let i = 0; i < loop; i++) {
-            let startTime = performance.now();
             func(array, array.length);
-            let endTime = performance.now();
-            elapsedTime += (endTime - startTime);
         }
-        return (elapsedTime / loop).toFixed(4);
+        let endTime = performance.now();
+        elapsedTime += (endTime - startTime);
+        // console.log(endTime);
+        return (elapsedTime).toFixed(2);
     }
+    
     
     function waSumInt(array, n) {
         let pointer = module._malloc(array.length * 4);

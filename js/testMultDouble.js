@@ -14,8 +14,8 @@ function jsMultiplyDouble(a, b, n) {
 function start() {
     console.log("Executing multiplication performance test: ");
 
-    let num = 10000;
-    let loop = 10;
+    let num = 100000;
+    let loop = 10000;
 
     let jsPerformance = document.getElementById('js_mult');
     let wsPerformance = document.getElementById('wasm_mult');
@@ -32,7 +32,7 @@ function start() {
         let endTime = performance.now();
         elapsedTime += (endTime - startTime);
         }
-        return (elapsedTime / loop).toFixed(4);
+        return (elapsedTime).toFixed(2);
     }
 
     setTimeout(function () {

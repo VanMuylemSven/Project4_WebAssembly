@@ -19,8 +19,8 @@
 function jsSum() {
     console.log("Executing Js Sum testing: ")
     console.log("-> Array(10000), 100 iterations ")
-    let num = 10000;
-    let loop = 100;
+    let num = 100000;
+    let loop = 10000;
     let jsResult = document.getElementById("sum_js_result");
     let arr = new Int32Array(num);
     //Fill array
@@ -51,13 +51,10 @@ function runSumPerformance(func, array, loop) {
 }
 function waSum(){
     console.log("Executing Wasm Sum testing: ")
-    console.log("-> Array(10000), 100 iterations ")
-
-    
-
+    console.log("-> Array(10000), 10000 iterations ")
     //
-    let num = 100;
-    let loop = 10;
+    let num = 100000;
+    let loop = 10000;
     let wasmResult = document.getElementById("sum_wasm_result");
     let arr = new Int32Array(num);
     //Fill array

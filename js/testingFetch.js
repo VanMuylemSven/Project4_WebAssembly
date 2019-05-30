@@ -16,11 +16,13 @@
     
 })();
 
+let loopNr = 1000;
+
 function fetchJson(){
     //Iterate 100 times for a fetch to json file
     let startTime = performance.now();
     let url = "./json/bol_list3.json";
-    for (let index = 0; index < 100; index++) {
+    for (let index = 0; index < loopNr; index++) {
 
         fetch(url).then(function(response){
             return response.json();
@@ -41,7 +43,7 @@ function fetchUrlJson(){
     //Iterate 100 times for a fetch to REST Api
     let startTime = performance.now();
     let url = "https://restcountries.eu/rest/v2/lang/es";
-    for (let index = 0; index < 100; index++) {
+    for (let index = 0; index < loopNr; index++) {
 
         fetch(url).then(function(response){
             return response.json();

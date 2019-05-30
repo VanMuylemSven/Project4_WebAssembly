@@ -25,10 +25,10 @@ function jsQuicksortInt(array, start, end) {
 
 function start() {
     console.log("Executing Quicksort performance tests ");
-    console.log("- 10 loops of array(10,000)")
+    console.log("- 10,000 loops of array(100,000)")
 
-    let num = 10000;
-    let loop = 10;
+    let num = 100000;
+    let loop = 10000;
     
     let jsPerformance = document.getElementById('js_result');
     let wsPerformance = document.getElementById('wasm_result');
@@ -52,21 +52,6 @@ function start() {
         res[i] = src[i];
         }
     }
-    function equalArray(array1, array2) {
-        if (array1.length !== array2.length) return false;
-        for (let i = 0, il = array1.length; i < il; i++) {
-        if(array1[i] !== array2[i])
-            return false;
-        }
-        return true;
-    }
-    function orderIsOk(array) {
-        for (let i = 1, il = array.length; i < il; i++) {
-        if (array[i-1] > array[i])
-            return false;
-        }
-        return true;
-    }
     
     function run(func, array, loop) {
         copyArray(array0, array);
@@ -79,7 +64,7 @@ function start() {
         let endTime = performance.now();
         elapsedTime += (endTime - startTime);
         }
-        return (elapsedTime / loop).toFixed(4);
+        return (elapsedTime).toFixed(2);
     }
     
     function wsQuicksortInt(array, start, end) {
