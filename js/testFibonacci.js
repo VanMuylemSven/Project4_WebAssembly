@@ -37,4 +37,4 @@ function start() {
             wsPerformance.innerText = run(functions.fib, num, loop) + " ms";
         });
     });
-    }
+}

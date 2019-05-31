@@ -14,7 +14,7 @@ function jsMultiplyDouble(a, b, n) {
 function start() {
     console.log("Executing multiplication performance test: ");
 
-    let num = 100000;
+    let num = 10000;
     let loop = 10000;
 
     let jsPerformance = document.getElementById('js_mult');

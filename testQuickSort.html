@@ -11,7 +11,7 @@
 </head>
 <script src="./wasm/quicksortInt.js"></script>
 <script>
-  // Instanties WASM Code into callable module form //
+  // Instantiates WASM Code into callable module form //
   var module, functions = {};
   fetch('./wasm/quicksortInt.wasm')
     .then(response => response.arrayBuffer())
@@ -49,7 +49,7 @@
   </div>
   <div class="test_container ">
     <div class="test_item">
-    <p class="test_title">Quicksort: Array(100,000), 10,000 loops</p>
+    <p class="test_title">Quicksort: Array(10,000), 10,000 loops</p>
 
     <table>
         <tr>

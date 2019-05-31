@@ -25,9 +25,9 @@ function jsQuicksortInt(array, start, end) {
 
 function start() {
     console.log("Executing Quicksort performance tests ");
-    console.log("- 10,000 loops of array(100,000)")
+    console.log("- 10,000 loops of array(10,000)")
 
-    let num = 100000;
+    let num = 10000;
     let loop = 10000;
     
     let jsPerformance = document.getElementById('js_result');

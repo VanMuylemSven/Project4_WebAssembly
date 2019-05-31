@@ -7,6 +7,7 @@ function start() {
     console.log("Executing SumInt performance tests: ");
 
     let num = 100000;
+    console.log(num);
     let loop = 10000;
     let jsPerformance = document.getElementById('sum_js_result');
     let wsPerformance = document.getElementById('sum_wasm_result');
