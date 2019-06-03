@@ -161,7 +161,7 @@ background: #ccc;
     
 }
 table {
-    margin-top: 30px;
+    margin-top: 15px;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 80%;
@@ -198,4 +198,10 @@ td, th {
 }
 .sidebar .selectedLink{
     color: #ddd;
+}
+
+.test_variables{
+    margin-top: 30px;
+    font-family: arial, sans-serif;
+    width: 80%;
 }
